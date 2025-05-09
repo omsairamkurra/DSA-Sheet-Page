@@ -1,0 +1,38 @@
+<div>
+    <div style="display: flex; justify-content: end; align-items: flex-end;">
+        <button (click)="goBack()">
+            back
+        </button>
+    </div>
+    <div class="progress-container">
+
+        <h2>Progress Tracker</h2>
+
+        <!-- Easy Progress -->
+        <div class="progress-category">
+            <h3>Easy</h3>
+            <div class="progress-bar">
+                <div class="progress" [ngStyle]="{'width': easyProgress + '%'}"></div>
+            </div>
+            <p>{{ easyProgress }}% Completed</p>
+        </div>
+
+        <!-- Medium Progress -->
+        <div class="progress-category">
+            <h3>Medium</h3>
+            <div class="progress-bar">
+                <div class="progress" [ngStyle]="{'width': mediumProgress + '%'}"></div>
+            </div>
+            <p>{{ mediumProgress }}% Completed</p>
+        </div>
+
+        <!-- Hard Progress -->
+        <div class="progress-category">
+            <h3>Hard</h3>
+            <div class="progress-bar">
+                <div class="progress" [ngStyle]="{'width': hardProgress + '%'}"></div>
+            </div>
+            <p>{{ hardProgress }}% Completed</p>
+        </div>
+    </div>
+</div>

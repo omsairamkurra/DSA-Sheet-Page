@@ -1,0 +1,43 @@
+<div>
+    <div style="display: flex; justify-content: end; align-items: flex-end;">
+        <button style="font-size: large;" (click)="goBack()">
+            Back
+        </button>
+    </div>
+    <div class="table-container">
+        <h2>Topics List</h2>
+
+        <table class="topics-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Name</th>
+                    <th>LeetCode Link</th>
+                    <th>YouTube Link</th>
+                    <th>Article Link</th>
+                    <th>Level</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let topic of topics">
+                    <tr>
+                        <td [attr.colspan]="5">{{ topic.category }}</td>
+                    </tr>
+
+                    <ng-container *ngFor="let item of topic.content">
+                        <tr>
+                            <td></td>
+                            <td>{{ item.name }}</td>
+                            <td><a href="{{ item.leetcodeLink }}" target="_blank">LeetCode</a></td>
+                            <td><a href="{{ item.youtubeLink }}" target="_blank">YouTube</a></td>
+                            <td><a href="{{ item.articleLink }}" target="_blank">Article</a></td>
+                            <td>{{item.level}}</td>
+                            <td>{{item.status}}</td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+            </tbody>
+        </table>
+    </div>
+</div>
